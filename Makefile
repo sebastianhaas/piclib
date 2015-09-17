@@ -1,5 +1,5 @@
 CC=gcc
-TARGET=piclib.a
+TARGET=libpiclib.a
 CFLAGS= -Wall -pedantic -std=c99
 CLEANEXTS   = o a
 
