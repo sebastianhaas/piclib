@@ -14,7 +14,7 @@ else
 	make
 	sudo make install
 	sudo ldconfig
-	cd ~
+	cd /home/vagrant
 	echo "Finished."
 fi
 
@@ -24,7 +24,7 @@ make clean
 make
 ./piclibtest
 make clean
-cd ~
+cd /home/vagrant
 echo "Finished unit test run."
 
 echo "Finished provisioning. Your machine is ready to use."
