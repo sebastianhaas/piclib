@@ -1,8 +1,7 @@
 CC=gcc
 TARGET=piclib.a
 CFLAGS= -Wall -pedantic -std=c99
-CLEANEXTS   = o a 
-INSTALLDIR  = ./bin
+CLEANEXTS   = o a
 
 # Default target
 .PHONY: all
@@ -14,19 +13,17 @@ $(TARGET): piclib.o
 
 .PHONY: install
 install:
-	mkdir -p $(INSTALLDIR)
-	cp -p $(TARGET) $(INSTALLDIR)
+	cp -p $(TARGET) /usr/local/lib
+	cp -p piclib.h /usr/local/include
 
 .PHONY: tests
 tests:
 	$(CC) $(CFLAGS) piclibtest.c -o piclibtest -lcmocka -l:piclib.a
 
-
 .PHONY: clean
 clean:
 	for file in $(CLEANEXTS); do rm -f *.$$file; done
 	rm -f piclibtest
-	rm -rf bin
 
 piclib.o: piclib.c
 	$(CC) $(CFLAGS) -c piclib.c -o piclib.o
