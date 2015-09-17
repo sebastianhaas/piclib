@@ -18,7 +18,7 @@ install:
 
 .PHONY: tests
 tests:
-	$(CC) $(CFLAGS) piclibtest.c -o piclibtest -lcmocka -l:piclib.a
+	$(CC) $(CFLAGS) piclibtest.c -o piclibtest -lcmocka -l:$(TARGET)
 
 .PHONY: clean
 clean:
